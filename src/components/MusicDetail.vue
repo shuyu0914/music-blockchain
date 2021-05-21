@@ -2,14 +2,14 @@
     <div class="card mt-4">
         <div class="card-horizontal">
             <div class="img-square-wrapper">
-                <img class="" :src='imagePath' alt="Card image cap">
+                <img class="" :src='imagePath' alt="Card image cap" width="200px">
             </div>
             <div class="card-body">
                 <h4 class="card-title text-left">{{ name }}</h4>
                 <h5 class="card-subtitle mb-3 text-muted text-left">{{ price }} eth</h5>
                 <p class="card-text text-left">{{ description }}</p>
                 <div class="text-left">
-                    <label class="mr-2 font-weight-bold">Number of kilogrames </label>
+                    <label class="mr-2 font-weight-bold">聆聽次數</label>
                     <select v-model='units' id='units'>
                         <option value=0>0</option>
                         <option v-for="index in 10" v-bind:key="index">{{ index }}</option>
@@ -23,9 +23,9 @@
 
 <script>
 export default {
-    name: 'FruitDetail',
+    name: 'MusicDetail',
     props:{
-        fruit: Object,
+        // fruit: Object,
         name: String,
         image: String,
         price: String,
@@ -45,10 +45,10 @@ export default {
         },
         units: {
             get: function() {
-                return this.$store.getters.getFruitUnits(this.name)
+                return this.$store.getters.getMusicUnits(this.name)
             },
             set: function(newValue) {
-                this.$store.commit('setFruitUnits', {name: this.name, units: newValue})
+                this.$store.commit('setMusicUnits', {name: this.name, units: newValue})
             }
         }
     }

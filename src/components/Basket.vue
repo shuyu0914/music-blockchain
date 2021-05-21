@@ -5,7 +5,7 @@
             <router-link to="/payments">Payments</router-link>
         </div>
         <div>
-            <FruitDetail v-for="(fruit, index) in fruits" :key="index" :name="fruit.name" :description="fruit.description" :price="fruit.price" v-bind:image="fruit.image" />
+            <MusicDetail v-for="(music, index) in musics" :key="index" :name="music.name" :description="music.description" :price="music.price" v-bind:image="music.image" />
             <form v-on:submit.prevent="">
                 <div v-if="address" class='row mt-4 bg-light text-left p-4 border border-secondary'>
                     <div class='col-sm text-right'>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import FruitDetail from './FruitDetail.vue'
+import MusicDetail from './MusicDetail.vue'
 import { mapState } from 'vuex' // Creates getter for properties in vuex state
 import PaymentsService from '../domain/PaymentsService.js'
 
@@ -37,9 +37,9 @@ export default {
     name: 'Basket',
     props: {},
     computed: mapState({
-        fruits: state => state.fruits,
+        musics: state => state.musics,
         total: state => {
-            return state.fruits.reduce((accumulator, currentValue) => (accumulator + Number(currentValue.units) * parseFloat(currentValue.price)), 0)
+            return state.musics.reduce((accumulator, currentValue) => (accumulator + Number(currentValue.units) * parseFloat(currentValue.price)), 0)
         },
         address: state => state.contract
     }),
@@ -49,7 +49,7 @@ export default {
         }
     },
     components: {
-        FruitDetail
+        MusicDetail
     },
     methods: {
         pay: async function() {
@@ -66,7 +66,7 @@ export default {
                 console.log(e)
             }
             this.loading = false
-            this.$store.commit('clearFruitUnits')
+            this.$store.commit('clearMusicUnits')
             this.$router.push('/payments')
         }
     }

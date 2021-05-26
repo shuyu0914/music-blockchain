@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="mb-4">
+        <!-- <div class="mb-4">
             <router-link to="/">Home</router-link> |
             <router-link to="/payments">Payments</router-link>
-        </div>
+        </div> -->
         <div>
             <MusicDetail v-for="(music, index) in musics" :key="index" :name="music.name" :description="music.description" :price="music.price" v-bind:image="music.image" />
             <form v-on:submit.prevent="">
@@ -72,6 +72,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

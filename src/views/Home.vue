@@ -1,43 +1,39 @@
 <template>
-  <div class="container mt-5">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src='/assets/slider-good4u.jpg' class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="/assets/slider-mylife.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="/assets/slider-dynamite.png" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+  <div class="container mt-2">
+
+    <splide :options="options" @splide:moved="moved">
+      <splide-slide v-for="slide in slides" :key="slide.src">
+        <img :src="slide.src" alt="slide.alt">
+      </splide-slide>
+    </splide>
   </div>
 
-
-
-  <!-- <div id="main" class="d-flex justify-content-center align-items-center">
-    <div id="nav">
-      <router-link to="/payments"><button type="button" class="btn btn-primary">Go to Payments</button></router-link>
-      <p></p>
-    </div>
-  </div> -->
 </template>
 
 <script>
-
+import { Splide, SplideSlide } from '@splidejs/vue-splide'
+import '@splidejs/splide/dist/css/themes/splide-default.min.css'
 export default {
-  name: 'home'
+  name: 'home',
+  components: {Splide,SplideSlide},
+  data() {
+    return {
+      options: {
+        rewind: true,
+        gap   : '1rem',
+      },
+      slides: [
+        {src:'/assets/slider-good4u.jpg'},
+        {src:'/assets/slider-mylife.jpg'},
+        {src:'/assets/slider-bts.jpg'},
+      ]
+    };
+  },
+  methods: {
+      moved( splide, newIndex ) {
+        console.log( 'moved', newIndex );
+      },
+    },
 }
 </script>
 

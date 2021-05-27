@@ -15,7 +15,7 @@
 			</div>
 			<hr/>
 			<div class="col-6 offset-md-2 mt-5">
-			  <button class="btn btn-outline-primary btn-block" type="button">登入</button>
+			  <button class="btn btn-info btn-block" type="button">登入</button>
 			</div>
     	</form>
     </div>

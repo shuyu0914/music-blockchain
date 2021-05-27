@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#/">
         Music Blockchain
       </a>
       <ul class="navbar-nav px-3" style="flex-direction:initial;">
         <li class="nav-item text-nowrap px-2">
-          <a class="nav-link" href="#">註冊</a>
+          <a class="nav-link" href="#/register">註冊</a>
         </li>
         <li class="nav-item text-nowrap px-2">
           <a class="nav-link" href="#/login">登入</a>
@@ -46,6 +46,11 @@
               <span>我的帳戶</span>
             </h6>
             <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#/">
+                  儲值 MUSIC COIN
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#/">
                   收藏歌曲

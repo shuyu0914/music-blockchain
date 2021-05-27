@@ -9,7 +9,7 @@
             <form v-on:submit.prevent="">
                 <div v-if="address" class='row mt-4 bg-light text-left p-4 border border-secondary'>
                     <div class='col-sm text-right'>
-                        <h3>Total {{ total }} eth</h3>
+                        <h3>Total {{ total }} Music Coin</h3>
                     </div>
                     <div class='col-sm text-left'>
                         <button class="btn btn-primary" @click="pay">Proceed to payment</button>

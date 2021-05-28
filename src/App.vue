@@ -36,7 +36,7 @@
             </h6>
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#/">
+                <a class="nav-link active" aria-current="page" href="#/musicupload">
                   作品上傳與版稅
                 </a>
               </li>

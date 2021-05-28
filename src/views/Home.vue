@@ -1,9 +1,9 @@
 <template>
-  <div class="container mt-2">
+  <div class="container-fluid mt-2">
 
     <splide :options="options" @splide:moved="moved">
       <splide-slide v-for="slide in slides" :key="slide.src">
-        <img :src="slide.src" alt="slide.alt">
+        <img :src="slide.src" alt="slide.alt" width="1500">
       </splide-slide>
     </splide>
   </div>
@@ -21,6 +21,8 @@ export default {
       options: {
         rewind: true,
         gap   : '1rem',
+        width  : 1500,
+        height: 800
       },
       slides: [
         {src:'/assets/slider-good4u.jpg'},

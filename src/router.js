@@ -5,6 +5,7 @@ import ShoppingCart from './views/ShoppingCart.vue'
 import Payments from './views/Payments.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+import MusicUpload from './views/MusicUpload.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/musicupload',
+      name: 'MusicUpload',
+      component: MusicUpload
     },
     {
       path: '/shopping',

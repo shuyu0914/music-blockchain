@@ -1,4 +1,5 @@
-# ethereum-payment-vuejs
+# It's a demo to practice (fork from ethereum-payment-vuejs)
+
 Simple Dapp and Vuejs app that manage payments in *ether*.  
   
 The project includes the following modules:
